@@ -1,0 +1,22 @@
+/**
+*
+* Helper
+*
+**/
+
+
+.clear {
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+/*==========  GENERIC  ==========*/
+.centered {
+  text-align: center;
+}
