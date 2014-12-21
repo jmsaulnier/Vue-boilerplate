@@ -11,9 +11,7 @@ var gulp = require('gulp'),
     source = require('vinyl-source-stream'),
     browserify = require('browserify'),
     watchify = require('watchify'),
-    stringify = require('stringify'),
-    uglify = require('gulp-uglify'),
-    gzip = require('gulp-gzip');
+    stringify = require('stringify');
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -76,6 +74,7 @@ gulp.task('images', function () {
 gulp.task('copy', function () {
   return gulp.src([
     'app/*',
+    'app/**/*.json',
     '!app/src',
     '!app/*.html',
     '!app/build',
@@ -141,7 +140,7 @@ gulp.task('html', function () {
     .pipe(assets.restore())
     .pipe($.useref())
     // Minify Any HTML
-    .pipe($.if('*.html', $.minifyHtml()))
+    .pipe($.if('*.html', $.minifyHtml({empty:true})))
     // Output Files
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'html'}));
@@ -187,7 +186,7 @@ gulp.task('serve:dist', ['default'], function () {
 gulp.task('compress', function() {
 
   return gulp.src('./dist/scripts/*.js')
-    .pipe(gzip())
+    .pipe($.gzip())
     .pipe(gulp.dest('./dist/scripts'));
 });
 
@@ -195,7 +194,7 @@ gulp.task('compress', function() {
 gulp.task('uglify', function() {
 
   return gulp.src('./dist/scripts/*.js')
-     .pipe(uglify())
+     .pipe($.uglify())
      .pipe(gulp.dest('./dist/scripts'));
 });
 
