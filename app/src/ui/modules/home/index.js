@@ -18,8 +18,6 @@ var component = Vue.extend({
 
     TweenMax.set(this.$el, {opacity: 0});
 
-    console.log('module home');
-
     // test addClass
     Vue.util.addClass(this.$el, 'c__home--yo');
 

@@ -1,13 +1,13 @@
 'use strict';
 
 var Vue = require('vue'),
-  route = require('vue-route'),
-  resizeMixin = require('vue-resize-mixin'),
-  createjs = require('CreateJS');
+    route = require('vue-route'),
+    resizeMixin = require('vue-resize-mixin'),
+    createjs = require('CreateJS');
 
 Vue.use(route);
 
-new Vue({
+var app = new Vue({
 
   el: '#app',
 
@@ -51,13 +51,9 @@ new Vue({
 
     startPreloader: function() {
 
-      console.log('start loading');
-
       var manifest = this.$options.manifest;
 
       this.preloader = new createjs.LoadQueue();
-
-      console.log(this.preloader);
 
       this.preloader.on('error', this.loadErrorHandler);
       this.preloader.on('progress', this.loadProgressHandler);
@@ -68,7 +64,7 @@ new Vue({
 
     loadErrorHandler: function(event) {
 
-      console.log('loading error');
+
     },
 
     loadProgressHandler: function(event) {
@@ -77,8 +73,6 @@ new Vue({
     },
 
     loadCompleteHandler: function(event) {
-
-      Vue.log('loading completed');
 
       this.progress = 1;
 
@@ -96,9 +90,10 @@ new Vue({
       var width = event.width;
       var height = event.height;
 
-      console.log('width' + width + 'height ' + height);
+      //console.log('width' + width + 'height ' + height);
     }
   }
 
 });
 
+module.exports = app;

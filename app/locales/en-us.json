@@ -1,0 +1,39 @@
+{
+  "browser": {
+
+    "update": {
+
+    }
+  },
+
+  "meta": {
+    "title": "...",
+    "description": "...",
+    "keywords":"...",
+
+    "twitter": {
+
+
+    },
+    "facebook": {
+
+
+    }
+  },
+
+  "app": {
+
+    "fonts": {
+      "RobotoCondensed": true
+    },
+
+    "c__header": {
+       "hashtag": {
+          "label": "#",
+          "style": {  },
+          "visible": true
+      }
+
+    }
+  }
+}

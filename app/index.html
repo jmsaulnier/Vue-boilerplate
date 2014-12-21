@@ -64,37 +64,39 @@
 
     </div>
 
+    <!-- CONFIG:: PROD-->
+    <script type="text/javascript">
+
+      var config = {
+        ENV           : 'prod',
+        LOG			      : 0,
+        LANG			    : 'en-us',
+        LOCALES		    : ['en', 'en-us', 'fr'],
+        TRANSLATIONS	: null,
+        UA				    : 'UA-XXXXXX',
+        FB_ID			    : 'xxx'
+      };
+
+    </script>
+
     <!-- build:remove -->
     <!-- CONFIG:: DEV-->
     <script type="text/javascript">
 
       var config = {
-        ENV       : 'dev',
-        LOG			  : 1,
-        LANG			: 'en',
-        UA				: 'UA-XXXXXX',
-        FB_ID			: 'xxx'
+        ENV           : 'dev',
+        LOG			      : 1,
+        LANG			    : 'en-US',
+        LOCALES		    : ['en', 'en-us', 'fr'],
+        TRANSLATIONS	: null,
+        UA				    : 'UA-XXXXXX',
+        FB_ID			    : 'xxx'
       };
 
     </script>
-
-
-
-    <!-- CONFIG:: PROD-->
     <!-- endbuild -->
-    <script type="text/javascript">
 
-      var config = {
-        ENV       : 'prod',
-        LOG			  : 0,
-        LANG			: 'en',
-        UA				: 'UA-XXXXXX',
-        FB_ID			: 'xxx'
-      };
-
-    </script>
-
-    <!--build:js scripts/bundle.js-->
+    <!-- build:js scripts/bundle.js -->
     <script src="build/bundle.js"></script>
     <!-- endbuild -->
 
