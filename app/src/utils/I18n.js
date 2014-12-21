@@ -2,6 +2,7 @@
 
 var Signal = require('signals'),
     request = require('superagent'),
+    queryString = require('query-string'),
     _ = require('underscore');
 
 /**
@@ -72,7 +73,7 @@ function I18n(options) {
       lang = navigator.language;
     }
 
-    return this.getValidLang(lang);
+    return this.getValidLang(lang, false);
 
   };
 
@@ -82,6 +83,12 @@ function I18n(options) {
    **/
   p.getLangUrlParams = function() {
 
+    var params = queryString.parse(location.search);
+
+    if(params && params.lang) {
+      return this.getValidLang(params.lang, true);
+    }
+
     return null;
   };
 
@@ -89,7 +96,7 @@ function I18n(options) {
    * @method getValidLang
    * @return
    **/
-  p.getValidLang = function(lang) {
+  p.getValidLang = function(lang, isUrlParams) {
 
     var lr = lang.split('-', 2),
         parentLang = lr[0],
@@ -115,7 +122,12 @@ function I18n(options) {
       }
     }
 
-    return (isValid) ? l : _defaults.lang;
+    if(isUrlParams) {
+      return (isValid) ? l : null;
+    } else {
+      return (isValid) ? l : _defaults.lang;
+    }
+
   };
 
   /**

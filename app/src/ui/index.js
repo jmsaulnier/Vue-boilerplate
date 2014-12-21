@@ -90,7 +90,7 @@ var app = new Vue({
       var width = event.width;
       var height = event.height;
 
-      //console.log('width' + width + 'height ' + height);
+      console.log('width' + width + 'height ' + height);
     }
   }
 

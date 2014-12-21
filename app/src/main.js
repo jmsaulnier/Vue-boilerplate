@@ -18,8 +18,6 @@ domready(function () {
     window.config.LANG = i18n.getLang();
     window.config.TRANSLATIONS = i18n.getTranslations();
 
-    alert( window.config.LANG );
-
     setHeadTranslations();
 
     require('./ui/index');
