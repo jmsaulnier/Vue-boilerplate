@@ -153,7 +153,7 @@ function I18n(options) {
    * @return {String} a string representation of the instance.
    **/
   p.toString = function() {
-    return '[I18n]';
+    return '[utils/I18n]';
   };
 }
 

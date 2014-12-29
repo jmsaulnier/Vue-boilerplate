@@ -51,7 +51,7 @@ gulp.task('watchify', function(){
 
 // Lint JavaScript
 gulp.task('jshint', function () {
-  return gulp.src('app/src/**/*.js')
+  return gulp.src(['app/src/**/*.js', 'test/unit/specs/**/*.js', 'test/e2e/*.js'])
     // taken care of by `watchify` (remove or comment out)
     //.pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
