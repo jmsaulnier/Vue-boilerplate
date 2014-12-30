@@ -5,156 +5,165 @@ var Signal = require('signals'),
     queryString = require('query-string'),
     _ = require('underscore');
 
-/**
- *
- **/
-function I18n(options) {
 
-  var _defaults = {
-    lang: 'en',
-    locales: ['en'],
-    directory: '/locales/',
-    prefix: '-',
-    ext: '.json'
-  };
+class I18n {
 
-  _.extend(_defaults, options);
+    /**
+     * @method completed
+     * @return
+     **/
+    get completed() {
 
-  var _lang = '';
-  var _translations = null;
-
-
-  var p = I18n.prototype;
-
-  p.completed = new Signal();
-
-  /**
-   * @method load
-   * @return
-   **/
-  p.load = function() {
-
-    _lang = this.getLangUrlParams() ? this.getLangUrlParams() : this.getLangBrowser();
-
-    request
-      .get(_defaults.directory + _lang + _defaults.ext)
-      .end(function(response){
-
-        if(response.ok) {
-
-          _translations = response.text;
-          this.completed.dispatch();
-
-        } else {
-          console.warn('Unable to load i18n file :: ' + _lang);
-        }
-
-      }.bind(this));
-
-  };
-
-  /**
-   * @method getLangBrowser
-   * @return
-   **/
-  p.getLangBrowser = function() {
-
-    var lang;
-
-    if (navigator.languages) {
-      // chrome does not currently set navigator.language correctly https://code.google.com/p/chromium/issues/detail?id=101138
-      // but it does set the first element of navigator.languages correctly
-      lang = navigator.languages[0];
-    } else if (navigator.userLanguage) {
-      // IE only
-      lang = navigator.userLanguage;
-    } else {
-      // as of this writing the latest version of firefox + safari set this correctly
-      lang = navigator.language;
+      return this._completed;
     }
 
-    return this.getValidLang(lang, false);
+    /**
+     * @method lang
+     * @return
+     **/
+    get lang() {
 
-  };
-
-  /**
-   * @method getUrlLangParams
-   * @return
-   **/
-  p.getLangUrlParams = function() {
-
-    var params = queryString.parse(location.search);
-
-    if(params && params.lang) {
-      return this.getValidLang(params.lang, true);
+      return this._lang;
     }
 
-    return null;
-  };
+    /**
+     * @method translations
+     * @return
+     **/
+    get translations() {
 
-  /**
-   * @method getValidLang
-   * @return
-   **/
-  p.getValidLang = function(lang, isUrlParams) {
+      return this._translations;
+    }
 
-    var lr = lang.split('-', 2),
+    /**
+     * @method load
+     * @return
+     **/
+    constructor(options) {
+
+      this._defaults = {
+        lang: 'en',
+        locales: ['en'],
+        directory: '/locales/',
+        prefix: '-',
+        ext: '.json'
+      };
+
+      _.extend(this._defaults, options);
+
+      this._lang = '';
+      this._translations = null;
+
+      this._completed  = new Signal();
+    }
+
+    /**
+     * @method load
+     * @return
+     **/
+    load() {
+
+      this._lang = this.getLangUrlParams() ? this.getLangUrlParams() : this.getLangBrowser();
+
+      request
+        .get(this._defaults.directory + this._lang + this._defaults.ext)
+        .end(function(response){
+
+          if(response.ok) {
+
+            this._translations = response.text;
+            this.completed.dispatch();
+
+          } else {
+            console.warn('Unable to load i18n file :: ' + this._lang);
+          }
+
+        }.bind(this));
+    }
+
+    /**
+     * @method getLangBrowser
+     * @return
+     **/
+    getLangBrowser() {
+
+      var lang;
+
+      if (navigator.languages) {
+        // chrome does not currently set navigator.language correctly https://code.google.com/p/chromium/issues/detail?id=101138
+        // but it does set the first element of navigator.languages correctly
+        lang = navigator.languages[0];
+      } else if (navigator.userLanguage) {
+        // IE only
+        lang = navigator.userLanguage;
+      } else {
+        // as of this writing the latest version of firefox + safari set this correctly
+        lang = navigator.language;
+      }
+
+      return this.getValidLang(lang, false);
+    }
+
+    /**
+     * @method getLangUrlParams
+     * @return
+     **/
+    getLangUrlParams() {
+
+      var params = queryString.parse(location.search);
+
+      if(params && params.lang) {
+        return this.getValidLang(params.lang, true);
+      }
+
+      return null;
+    }
+
+    /**
+     * @method getValidLang
+     * @return
+     **/
+    getValidLang(lang, isUrlParams) {
+
+      var lr = lang.split('-', 2),
         parentLang = lr[0],
         l = '',
         isValid = false,
         hasRegion = false;
 
-    for (var i = 0, numLocales = _defaults.locales.length; i < numLocales; i++) {
+      for (var i = 0, numLocales = this._defaults.locales.length; i < numLocales; i++) {
 
-      if(lang.toLowerCase() === _defaults.locales[i]) {
+        if(lang.toLowerCase() === this._defaults.locales[i]) {
 
-        hasRegion = true;
-        isValid = true;
-        l = lang.toLowerCase();
-
-      } else {
-
-        if(parentLang.toLowerCase() === _defaults.locales[i] && !hasRegion) {
-
+          hasRegion = true;
           isValid = true;
-          l =  parentLang.toLowerCase();
+          l = lang.toLowerCase();
+
+        } else {
+
+          if(parentLang.toLowerCase() === this._defaults.locales[i] && !hasRegion) {
+
+            isValid = true;
+            l =  parentLang.toLowerCase();
+          }
         }
+      }
+
+      if(isUrlParams) {
+        return (isValid) ? l : null;
+      } else {
+        return (isValid) ? l : this._defaults.lang;
       }
     }
 
-    if(isUrlParams) {
-      return (isValid) ? l : null;
-    } else {
-      return (isValid) ? l : _defaults.lang;
+    /**
+     * @method toString
+     * @return {String} a string representation of the instance.
+     **/
+    toString() {
+
+      return '[utils/I18n]';
     }
-
-  };
-
-  /**
-   * @method getLang
-   * @return
-   **/
-  p.getLang = function() {
-
-    return _lang;
-  };
-
-  /**
-   * @method getTranslations
-   * @return
-   **/
-  p.getTranslations = function() {
-
-    return _translations;
-  };
-
-  /**
-   * @method toString
-   * @return {String} a string representation of the instance.
-   **/
-  p.toString = function() {
-    return '[utils/I18n]';
-  };
 }
 
 module.exports = I18n;

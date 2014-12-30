@@ -11,7 +11,8 @@ var gulp = require('gulp'),
     source = require('vinyl-source-stream'),
     browserify = require('browserify'),
     watchify = require('watchify'),
-    stringify = require('stringify');
+    stringify = require('stringify'),
+    to5ify = require("6to5ify");
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -30,10 +31,18 @@ var AUTOPREFIXER_BROWSERS = [
  */
 var dist = false; // set to true when `default` task is run
 gulp.task('watchify', function(){
-  var bundler = watchify(browserify('./app/src/main.js').transform(stringify(['.hjs', '.html', '.tpl'])), {
-    basedir: './app/src', // (roots __dirname)
-    debug: true
-  });
+
+  var bundler = watchify(
+    browserify()
+      .transform(stringify(['.hjs', '.html', '.tpl']))
+      .transform(to5ify)
+      .require(require.resolve('./app/src/main.js'), { entry: true }),
+    {
+      basedir: './app/src', // (roots __dirname)
+      debug: true
+    }
+  );
+
   var bundle = function() {
     return bundler
       .bundle()
@@ -51,7 +60,7 @@ gulp.task('watchify', function(){
 
 // Lint JavaScript
 gulp.task('jshint', function () {
-  return gulp.src(['app/src/**/*.js', 'test/unit/specs/**/*.js', 'test/e2e/*.js'])
+  return gulp.src(['app/src/**/*.js']) // /*, 'test/unit/specs/**/*.js', 'test/e2e/*.js'] */
     // taken care of by `watchify` (remove or comment out)
     //.pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
