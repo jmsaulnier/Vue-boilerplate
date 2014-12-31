@@ -3,6 +3,7 @@
 // Include Gulp & Tools We'll Use
 var gulp = require('gulp'),
     $ = require('gulp-load-plugins')(),
+    parallelize = require('concurrent-transform'),
     del = require('del'),
     runSequence = require('run-sequence'),
     browserSync = require('browser-sync'),
@@ -278,11 +279,19 @@ gulp.task('publish', ['build'], function() {
     return;
   }
 
-  var publisher = awspublish.create(options);
+  var publisher = $.awspublish.create(options);
 
   return gulp.src('./app/dist/**/*')
     .pipe(parallelize(publisher.publish(), 10))
-    .pipe(awspublish.reporter());
+    .pipe($.awspublish.reporter())
+
+    .on('end', function() {
+      console.log('publish end...');
+    })
+
+    .on('finish', function() {
+      console.log('publish finish...');
+    });
 });
 
 // Load custom tasks from the `tasks` directory
