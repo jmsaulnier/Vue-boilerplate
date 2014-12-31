@@ -180,7 +180,7 @@ gulp.task('serve', ['watchify'], function () {
 });
 
 // Build and serve the output from the dist build
-gulp.task('serve:dist', ['default'], function () {
+gulp.task('serve:dist', ['build'], function () {
   browserSync({
     notify: false,
     logPrefix: 'WSK',
@@ -209,7 +209,7 @@ gulp.task('uglify', function() {
 });
 
 // Build Production Files, the Default Task
-gulp.task('default', ['clean'], function (cb) {
+gulp.task('build', ['clean'], function (cb) {
   dist = true; // changes Watchify's build destination
   // add `watchify` task to the run sequence (below)
   runSequence('styles', ['jshint', 'watchify', 'html', 'images', 'fonts', 'copy'], 'uglify', 'compress', cb);
@@ -259,6 +259,30 @@ gulp.task('test', function ( done ) {
   child.on('error', function reportError () {
     console.log('FATAL ERROR: Test failed to start!');
   });
+});
+
+gulp.task('publish', ['build'], function() {
+
+  var options = {
+    key: process.env.AWS_KEY,
+    secret: process.env.AWS_SECRET,
+    bucket: process.env.AWS_BUCKET
+  };
+
+  if (fs.existsSync("./env.json")) {
+    options = require('./env.json');
+  }
+
+  if (!options || !options.key || !options.secret || !options.bucket) {
+    console.log('skipping publish - credentials missing');
+    return;
+  }
+
+  var publisher = awspublish.create(options);
+
+  return gulp.src('./app/dist/**/*')
+    .pipe(parallelize(publisher.publish(), 10))
+    .pipe(awspublish.reporter());
 });
 
 // Load custom tasks from the `tasks` directory
