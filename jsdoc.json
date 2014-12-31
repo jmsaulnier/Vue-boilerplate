@@ -1,0 +1,24 @@
+{
+  "opts": {
+    "destination": "./docs/"
+  },
+	"plugins": [
+		"plugins/markdown"
+	],
+	"markdown": {
+		"hardwrap" : true,
+		"parser": "gfm"
+	},
+	"templates": {
+		"cleverLinks"       : false,
+		"monospaceLinks"    : false,
+		"outputSourceFiles" : false,
+		"outputSourcePath"  : false,
+		"collapseSymbols"   : false,
+		"inverseNav"        : true
+	},
+	"opts": {
+		"encoding": "utf8",
+		"private": false
+	}
+}

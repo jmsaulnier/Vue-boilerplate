@@ -212,7 +212,7 @@ gulp.task('uglify', function() {
 gulp.task('default', ['clean'], function (cb) {
   dist = true; // changes Watchify's build destination
   // add `watchify` task to the run sequence (below)
-  runSequence('styles', ['jshint', 'watchify', 'html', 'images', 'fonts', 'copy'] , 'uglify', 'compress', cb);
+  runSequence('styles', ['jshint', 'watchify', 'html', 'images', 'fonts', 'copy'], 'uglify', 'compress', cb);
 });
 
 // Run PageSpeed Insights
@@ -225,6 +225,41 @@ gulp.task('pagespeed', pagespeed.bind(null, {
   url: 'https://example.com',
   strategy: 'mobile'
 }));
+
+// build documentation
+gulp.task('jsdoc', function ( done ) {
+  // run process
+  var child = require('child_process').spawn(
+    './node_modules/.bin/jsdoc',
+    ['--recurse', '--configure', 'jsdoc.json', '--destination', 'docs/', 'app/src/', 'readme.md']
+  );
+
+  child.on('close', done);
+  child.on('error', function reportError () {
+    console.log('FATAL ERROR: JSDoc failed to start!');
+  });
+
+  child.stderr.on('data', function reportStdErr ( data ) {
+    console.log(data);
+  });
+  child.stdout.on('data', function reportStdOut ( data ) {
+    console.log(data);
+  });
+});
+
+// test
+gulp.task('test', function ( done ) {
+  // run process
+  var child = require('child_process').spawn(
+    './node_modules/.bin/prova',
+    ['test/**/*.js', '-t', '6to5ify', '-b', '-l', 'safari']
+  );
+
+  child.on('close', done);
+  child.on('error', function reportError () {
+    console.log('FATAL ERROR: Test failed to start!');
+  });
+});
 
 // Load custom tasks from the `tasks` directory
 // try { require('require-dir')('tasks'); } catch (err) { console.error(err); }
