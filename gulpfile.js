@@ -12,7 +12,8 @@ var gulp = require('gulp'),
     browserify = require('browserify'),
     watchify = require('watchify'),
     stringify = require('stringify'),
-    to5ify = require("6to5ify");
+    to5ify = require("6to5ify"),
+    prova = require("prova");
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -60,7 +61,7 @@ gulp.task('watchify', function(){
 
 // Lint JavaScript
 gulp.task('jshint', function () {
-  return gulp.src(['app/src/**/*.js']) // /*, 'test/unit/specs/**/*.js', 'test/e2e/*.js'] */
+  return gulp.src(['app/src/**/*.js', 'test/unit/specs/**/*.js', 'test/e2e/*.js'])
     // taken care of by `watchify` (remove or comment out)
     //.pipe(reload({stream: true, once: true}))
     .pipe($.jshint())

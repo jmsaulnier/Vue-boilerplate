@@ -68,10 +68,12 @@
     "jshint-stylish": "^1.0.0",
     "napa": "^1.1.0",
     "opn": "^1.0.1",
+    "prova": "^2.1.1",
     "psi": "^0.1.6",
     "require-dir": "^0.1.0",
     "run-sequence": "^1.0.2",
     "stringify": "^3.0.0",
+    "tape": "^3.0.3",
     "vinyl-source-stream": "^1.0.0",
     "watchify": "^2.2.1"
   },
@@ -80,7 +82,7 @@
   },
   "scripts": {
     "install": "napa CreateJS/PreloadJS",
-    "test": "mochify"
+    "test": "prova test/**/*.js -t 6to5ify -b -l chrome"
   },
   "dependencies": {
     "domready": "^1.0.7",
