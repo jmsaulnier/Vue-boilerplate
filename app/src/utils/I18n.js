@@ -6,6 +6,7 @@ var Signal = require('signals'),
     _ = require('underscore');
 
 /**
+ * I18n class
  * @module utils/I18n
  * @property {Signal} completed
  * @property {String} lang
@@ -14,8 +15,8 @@ var Signal = require('signals'),
 class I18n {
 
     /**
-     * @readonly
-     **/
+    * @readonly
+    **/
     get completed() {
 
       return this._completed;
@@ -44,9 +45,7 @@ class I18n {
      **/
     constructor(options) {
 
-      /**
-       * @private
-       **/
+      //
       this._defaults = {
         lang: 'en',
         locales: ['en'],
@@ -57,19 +56,13 @@ class I18n {
 
       _.extend(this._defaults, options);
 
-      /**
-       * @private
-       **/
+      //
       this._lang = '';
 
-      /**
-       * @private
-       **/
+      //
       this._translations = null;
 
-      /**
-       * @private
-       **/
+      //
       this._completed  = new Signal();
     }
 
