@@ -5,6 +5,12 @@ var Vue = require('vue'),
     resizeMixin = require('vue-resize-mixin'),
     createjs = require('CreateJS');
 
+
+/**
+ * UI index module.
+ * @module ui/index
+ */
+
 Vue.use(route);
 
 var app = new Vue({
@@ -49,6 +55,9 @@ var app = new Vue({
 
   methods: {
 
+    /**
+     * @method startPreloader
+     **/
     startPreloader: function() {
 
       var manifest = this.$options.manifest;
@@ -62,16 +71,28 @@ var app = new Vue({
 
     },
 
+    /**
+     * @method loadErrorHandler
+     * @param {Object} event
+     **/
     loadErrorHandler: function(event) {
 
 
     },
 
+    /**
+     * @method loadProgressHandler
+     * @param {Object} event
+     **/
     loadProgressHandler: function(event) {
 
       this.progress = event.progress;
     },
 
+    /**
+     * @method loadCompleteHandler
+     * @param {Object} event
+     **/
     loadCompleteHandler: function(event) {
 
       this.progress = 1;
@@ -85,6 +106,10 @@ var app = new Vue({
       }
     },
 
+    /**
+     * @method resizeHandler
+     * @param {Object} event
+     **/
     resizeHandler: function(event) {
 
       var width = event.width;

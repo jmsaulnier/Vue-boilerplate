@@ -2,6 +2,11 @@
 
 var Vue = require('vue');
 
+/**
+ * UI header component.
+ * @module ui/components/header/index
+ */
+
 var component = Vue.extend({
 
   template: require('./view.tpl'),

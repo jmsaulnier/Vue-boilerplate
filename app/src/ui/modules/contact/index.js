@@ -3,6 +3,11 @@
 var Vue = require('vue'),
     _ = require('underscore');
 
+/**
+ * UI contact module.
+ * @module ui/modules/contact/index
+ */
+
 var component = Vue.extend({
 
   template: require('./view.tpl'),
@@ -21,6 +26,12 @@ var component = Vue.extend({
 
   methods: {
 
+    /**
+     *
+     * //
+     *
+     * @method testNavigation
+     **/
     testNavigation: function() {
 
       Vue.navigate('/');

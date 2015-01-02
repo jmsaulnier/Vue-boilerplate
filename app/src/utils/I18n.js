@@ -5,12 +5,16 @@ var Signal = require('signals'),
     queryString = require('query-string'),
     _ = require('underscore');
 
-
+/**
+ * @module utils/I18n
+ * @property {Signal} completed
+ * @property {String} lang
+ * @property {Object} translations
+ */
 class I18n {
 
     /**
-     * @method completed
-     * @return
+     * @readonly
      **/
     get completed() {
 
@@ -18,29 +22,31 @@ class I18n {
     }
 
     /**
-     * @method lang
-     * @return
-     **/
+    * @readonly
+    **/
     get lang() {
 
       return this._lang;
     }
 
     /**
-     * @method translations
-     * @return
-     **/
+    * @readonly
+    **/
     get translations() {
 
       return this._translations;
     }
 
     /**
-     * @method load
-     * @return
+     * //
+     * @method constructor
+     * @param {Object} options
      **/
     constructor(options) {
 
+      /**
+       * @private
+       **/
       this._defaults = {
         lang: 'en',
         locales: ['en'],
@@ -51,15 +57,25 @@ class I18n {
 
       _.extend(this._defaults, options);
 
+      /**
+       * @private
+       **/
       this._lang = '';
+
+      /**
+       * @private
+       **/
       this._translations = null;
 
+      /**
+       * @private
+       **/
       this._completed  = new Signal();
     }
 
     /**
+     * //
      * @method load
-     * @return
      **/
     load() {
 
@@ -82,8 +98,9 @@ class I18n {
     }
 
     /**
+     * //
      * @method getLangBrowser
-     * @return
+     * @return {String}
      **/
     getLangBrowser() {
 
@@ -105,8 +122,9 @@ class I18n {
     }
 
     /**
+     * //
      * @method getLangUrlParams
-     * @return
+     * @return {String}
      **/
     getLangUrlParams() {
 
@@ -120,8 +138,11 @@ class I18n {
     }
 
     /**
+     * //
      * @method getValidLang
-     * @return
+     * @param {String} lang
+     * @param {Boolean} isUrlParams
+     * @return {String}
      **/
     getValidLang(lang, isUrlParams) {
 
@@ -157,6 +178,7 @@ class I18n {
     }
 
     /**
+     * //
      * @method toString
      * @return {String} a string representation of the instance.
      **/

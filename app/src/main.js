@@ -3,6 +3,11 @@
 var domready = require('domready'),
     I18n = require('./utils/I18n');
 
+/**
+ * main module.
+ * @module main
+ */
+
 domready(function () {
 
   require('6to5ify/node_modules/6to5/polyfill');
@@ -12,8 +17,8 @@ domready(function () {
   i18n.load();
 
   /**
+   * //
    * @method boot
-   * @return
    **/
   function boot() {
 
@@ -29,8 +34,8 @@ domready(function () {
   }
 
   /**
+   * //
    * @method setHeadTranslations
-   * @return
    **/
   function setHeadTranslations() {
 

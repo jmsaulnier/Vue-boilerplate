@@ -1,5 +1,10 @@
 'use strict';
 
+/**
+ * UI routes module.
+ * @module ui/routes
+ */
+
 var routes = {
   '/': {
     componentId: 'mHome',

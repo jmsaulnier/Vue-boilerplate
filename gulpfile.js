@@ -28,6 +28,8 @@ var AUTOPREFIXER_BROWSERS = [
   'bb >= 10'
 ];
 
+var version = require('./package.json').version;
+
 /**
  * BROWSERIFY / WATCHIFY TASK ADDED HERE
  */
@@ -232,7 +234,7 @@ gulp.task('jsdoc', function ( done ) {
   // run process
   var child = require('child_process').spawn(
     './node_modules/.bin/jsdoc',
-    ['--recurse', '--configure', 'jsdoc.json', '--destination', 'docs/', 'app/src/', 'readme.md']
+    ['--recurse', '--configure', 'jsdoc.json', '--destination', 'docs/', 'app/src']
   );
 
   child.on('close', done);
