@@ -37,10 +37,10 @@
     "PreloadJS": "CreateJS/PreloadJS"
   },
   "devDependencies": {
-    "6to5ify": "^3.0.0",
+    "6to5ify": "^3.1.0",
     "apache-server-configs": "^2.11.0",
-    "browser-sync": "^1.8.2",
-    "browserify": "^8.0.2",
+    "browser-sync": "^1.8.3",
+    "browserify": "^8.0.3",
     "browserify-shim": "^3.8.2",
     "concurrent-transform": "^1.0.0",
     "del": "^1.1.1",
@@ -54,7 +54,7 @@
     "gulp-flatten": "0.0.4",
     "gulp-gzip": "0.0.8",
     "gulp-if": "^1.2.5",
-    "gulp-imagemin": "^2.0.0",
+    "gulp-imagemin": "^2.1.0",
     "gulp-jshint": "^1.9.0",
     "gulp-load-plugins": "^0.8.0",
     "gulp-minify-html": "^0.1.8",
@@ -62,10 +62,10 @@
     "gulp-processhtml": "^1.0.2",
     "gulp-replace": "^0.5.0",
     "gulp-sass": "^1.2.4",
-    "gulp-size": "^1.1.0",
+    "gulp-size": "^1.2.0",
     "gulp-uglify": "^1.0.2",
-    "gulp-uncss": "^0.5.1",
-    "gulp-useref": "^1.0.2",
+    "gulp-uncss": "^0.5.2",
+    "gulp-useref": "^1.1.0",
     "insert-css": "^0.2.0",
     "jsdoc": "^3.3.0-alpha13",
     "jshint-stylish": "^1.0.0",
@@ -88,15 +88,17 @@
   },
   "dependencies": {
     "domready": "^1.0.7",
-    "extend": "^2.0.0",
+    "fastclick": "^1.0.3",
     "gsap": "^1.15.0",
     "howler": "git://github.com/goldfire/howler.js.git#2.0",
+    "inherits": "^2.0.1",
     "query-string": "^1.0.0",
     "signals": "^1.0.0",
     "superagent": "^0.21.0",
-    "underscore": "^1.7.0",
+    "ua-device-type": "0.0.3",
     "vue": "^0.11.4",
     "vue-resize-mixin": "^1.0.1",
-    "vue-route": "^1.4.1"
+    "vue-route": "^1.4.1",
+    "xtend": "^4.0.0"
   }
 }

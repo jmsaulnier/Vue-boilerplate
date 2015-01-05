@@ -1,14 +1,13 @@
 'use strict';
 
-var Vue = require('vue'),
-    _ = require('underscore');
+var Vue = require('vue');
 
 /**
  * UI contact module.
  * @module ui/modules/contact/index
  */
 
-var component = Vue.extend({
+module.exports = Vue.extend({
 
   template: require('./view.tpl'),
   replace: true,
@@ -21,7 +20,7 @@ var component = Vue.extend({
 
   attached: function() {
 
-    console.log('contact ' + _.uniqueId());
+    console.log('contact');
   },
 
   methods: {
@@ -40,5 +39,3 @@ var component = Vue.extend({
   }
 
 });
-
-module.exports = component;

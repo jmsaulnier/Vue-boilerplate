@@ -8,7 +8,7 @@ var Vue = require('vue'),
  * @module ui/modules/home/index
  */
 
-var component = Vue.extend({
+module.exports = Vue.extend({
 
   template: require('./view.tpl'),
   replace: true,
@@ -53,5 +53,3 @@ var component = Vue.extend({
   }
 
 });
-
-module.exports = component;

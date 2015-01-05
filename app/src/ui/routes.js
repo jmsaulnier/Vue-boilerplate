@@ -5,7 +5,7 @@
  * @module ui/routes
  */
 
-var routes = {
+module.exports = {
   '/': {
     componentId: 'mHome',
     isDefault: true
@@ -18,5 +18,3 @@ var routes = {
     click: false
   }
 };
-
-module.exports = routes;

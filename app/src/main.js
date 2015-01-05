@@ -1,7 +1,7 @@
 'use strict';
 
 var domready = require('domready'),
-    I18n = require('./utils/I18n');
+    i18n = require('./utils/i18n');
 
 /**
  * main module.
@@ -10,11 +10,8 @@ var domready = require('domready'),
 
 domready(function () {
 
-  require('6to5ify/node_modules/6to5/polyfill');
-
-  var i18n = new I18n( { lang: window.config.LANG, locales: window.config.LOCALES });
   i18n.completed.addOnce(boot);
-  i18n.load();
+  i18n.load({ lang: window.config.LANG, locales: window.config.LOCALES });
 
   /**
    * //
@@ -30,7 +27,7 @@ domready(function () {
     setHeadTranslations();
 
     require('./ui/index');
-    I18n = null;
+    i18n = null;
   }
 
   /**

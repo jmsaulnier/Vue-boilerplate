@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('prova'),
-    I18n = require('../../../../app/src/utils/I18n');
+    i18n = require('../../../../app/src/utils/i18n');
 
 
 /*
@@ -10,18 +10,13 @@ var test = require('prova'),
 
 test('utils/I18n -- load locale file (when only "fr" available) ', function (t) {
 
-  t.plan(3);
+  t.plan(2);
 
   var lang = 'fr';
   var locales = ['fr'];
 
-  var i18n = new I18n( { directory: '../../../../app/locales/', lang: lang, locales: locales });
   i18n.completed.addOnce(boot);
-
-  //
-  t.equal(i18n.getValidLang(lang, false), lang);
-
-  i18n.load();
+  i18n.load({ directory: '../../../../app/locales/', lang: lang, locales: locales });
 
   function boot() {
     t.pass('load locale files: ' + i18n.lang);
@@ -36,13 +31,20 @@ test('utils/I18n -- load locale file (when only "fr" available) ', function (t) 
 
 test('utils/I18n -- package name', function (t) {
 
-  t.plan(1);
+  t.plan(2);
 
   var lang = 'fr';
   var locales = ['fr'];
 
-  var i18n = new I18n( { directory: '../../../../app/locales/', lang: lang, locales: locales });
+  i18n.completed.addOnce(boot);
+  i18n.load({ directory: '../../../../app/locales/', lang: lang, locales: locales });
 
-  t.equal(i18n.toString(), '[utils/I18n]');
+  function boot() {
+    t.pass('load locale files: ' + i18n.lang);
+
+    t.equal(i18n.toString(), '[utils/I18n (lang='+i18n.lang+')]');
+  }
+
+
 
 });

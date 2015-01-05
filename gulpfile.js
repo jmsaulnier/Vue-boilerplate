@@ -162,6 +162,8 @@ gulp.task('html', function () {
 // Clean Output Directory
 gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
+gulp.task('clean:docs', del.bind(null, ['docs/*', '!docs/.gitkeep'], {dot: true}));
+
 // Watch Files For Changes & Reload
 gulp.task('serve', ['watchify'], function () {
   browserSync({
@@ -230,7 +232,7 @@ gulp.task('pagespeed', pagespeed.bind(null, {
 }));
 
 // build documentation
-gulp.task('jsdoc', function ( done ) {
+gulp.task('docs', ['clean:docs'], function ( done ) {
   // run process
   var child = require('child_process').spawn(
     './node_modules/.bin/jsdoc',

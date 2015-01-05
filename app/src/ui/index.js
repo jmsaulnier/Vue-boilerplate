@@ -13,7 +13,7 @@ var Vue = require('vue'),
 
 Vue.use(route);
 
-var app = new Vue({
+module.exports = new Vue({
 
   el: '#app',
 
@@ -120,5 +120,3 @@ var app = new Vue({
   }
 
 });
-
-module.exports = app;
