@@ -22,8 +22,7 @@
   },
   "browser": {
     "TweenMax": "./node_modules/gsap/src/uncompressed/TweenMax.js",
-    "TimelineMax": "./node_modules/gsap/src/uncompressed/TimelineMax.js",
-    "CreateJS": "./node_modules/PreloadJS/lib/preloadjs-NEXT.min.js"
+    "TimelineMax": "./node_modules/gsap/src/uncompressed/TimelineMax.js"
   },
   "browserify": {
     "transform": [
@@ -31,10 +30,7 @@
     ]
   },
   "browserify-shim": {
-    "CreateJS": "createjs"
-  },
-  "napa": {
-    "PreloadJS": "CreateJS/PreloadJS"
+
   },
   "devDependencies": {
     "6to5ify": "^3.1.1",
@@ -69,7 +65,6 @@
     "insert-css": "^0.2.0",
     "jsdoc": "^3.3.0-alpha13",
     "jshint-stylish": "^1.0.0",
-    "napa": "^1.2.0",
     "opn": "^1.0.1",
     "prova": "^2.1.1",
     "psi": "^0.1.6",
@@ -84,13 +79,12 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "install": "napa CreateJS/PreloadJS"
+
   },
   "dependencies": {
     "domready": "^1.0.7",
     "fastclick": "^1.0.3",
     "gsap": "^1.15.0",
-    "howler": "git://github.com/goldfire/howler.js.git#2.0",
     "inherits": "^2.0.1",
     "query-string": "^1.0.0",
     "signals": "^1.0.0",
