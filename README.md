@@ -17,6 +17,7 @@ A front-end template that helps you build fast, modern mobile web apps. (IE9+) @
 ## Getting Started
 
 - Install: `npm install`
+- Compile Sass files: `gulp styles`
 - Run: `gulp serve`
 
 #### Third-Party Dependencies
