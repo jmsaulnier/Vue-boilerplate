@@ -5,7 +5,7 @@ A front-end template that helps you build fast, modern mobile web apps.
 
 ## Features
 
-* [Vue.js](http://vuejs.org/) ♡
+* [Vue.js](http://vuejs.org/) / [Browserify](http://browserify.org/) ♡
 * [GSAP](https://greensock.com/gsap)
 * CSS Autoprefixing
 * Built-in preview server with BrowserSync
