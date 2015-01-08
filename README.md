@@ -8,7 +8,7 @@ A front-end template that helps you build fast, modern mobile web apps.
 * [Vue.js](http://vuejs.org/) / [Browserify](http://browserify.org/) ♡
 * [GSAP](https://greensock.com/gsap)
 * CSS Autoprefixing
-* Built-in preview server with BrowserSync
+* Built-in preview server with [BrowserSync](http://www.browsersync.io/)
 * Automagically compile Sass / ES6
 * Automagically lint your scripts
 * Awesome Image Optimization (via OptiPNG, pngquant, jpegtran and gifsicle)
