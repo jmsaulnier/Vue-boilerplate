@@ -37,7 +37,7 @@
     "PreloadJS": "CreateJS/PreloadJS"
   },
   "devDependencies": {
-    "6to5ify": "^3.1.0",
+    "6to5ify": "^3.1.1",
     "apache-server-configs": "^2.11.0",
     "browser-sync": "^1.8.3",
     "browserify": "^8.0.3",
@@ -47,7 +47,7 @@
     "function-bind": "^1.0.2",
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^2.0.0",
-    "gulp-awspublish": "0.0.23",
+    "gulp-awspublish": "0.0.24",
     "gulp-cache": "^0.2.4",
     "gulp-changed": "^1.1.0",
     "gulp-csso": "^0.2.9",
@@ -65,11 +65,11 @@
     "gulp-size": "^1.2.0",
     "gulp-uglify": "^1.0.2",
     "gulp-uncss": "^0.5.2",
-    "gulp-useref": "^1.1.0",
+    "gulp-useref": "^1.1.1",
     "insert-css": "^0.2.0",
     "jsdoc": "^3.3.0-alpha13",
     "jshint-stylish": "^1.0.0",
-    "napa": "^1.1.0",
+    "napa": "^1.2.0",
     "opn": "^1.0.1",
     "prova": "^2.1.1",
     "psi": "^0.1.6",
@@ -98,7 +98,7 @@
     "ua-device-type": "0.0.3",
     "vue": "^0.11.4",
     "vue-resize-mixin": "^1.0.1",
-    "vue-route": "^1.4.1",
+    "vue-route": "^1.4.2",
     "xtend": "^4.0.0"
   }
 }
