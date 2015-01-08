@@ -1,7 +1,7 @@
 Vue-boilerplate
 ===============
 
-A front-end template that helps you build fast, modern mobile web apps.
+A front-end template that helps you build fast, modern mobile web apps. (IE9+) @see [Web Starter Kit](https://github.com/google/web-starter-kit)
 
 ## Features
 
