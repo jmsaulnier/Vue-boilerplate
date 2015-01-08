@@ -29,6 +29,12 @@ Third-party dependencies are managed with **npm**
 $ npm install --save awesome-module
 ```
 
+## Test
+
+```sh
+$ gulp test
+```
+
 ## Build
 
 ```sh
