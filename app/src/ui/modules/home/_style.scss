@@ -1,14 +1,36 @@
-.c__home {
+.m__home {
 
-}
-
-.c__home--yo {
-
+  width: 500px;
+  margin: 50px auto 0 auto;
+  padding: 60px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
   color: #FFFFFF;
-  background-color: #000066;
+  background-color: #2E354D;
+  border-radius: 6px;
+
+  h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .navigation {
+    padding: 20px 0 0 0;
+    text-align: center;
+  }
 
   button {
+    font-weight: bold;
     color: #000001;
+
+    &:hover {
+      color: #999;
+    }
   }
+}
+
+.m__home--yo {
 
 }

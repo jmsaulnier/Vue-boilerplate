@@ -1,3 +1,32 @@
 .m__contact {
 
+  width: 350px;
+  margin: 50px auto 0 auto;
+  padding: 60px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  color: #FFFFFF;
+  background-color: #2E354D;
+
+  h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .navigation {
+    padding: 20px 0 0 0;
+    text-align: center;
+  }
+
+  button {
+    font-weight: bold;
+    color: #000001;
+
+    &:hover {
+      color: #999;
+    }
+  }
+
 }

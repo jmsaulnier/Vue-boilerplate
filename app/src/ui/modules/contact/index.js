@@ -1,6 +1,7 @@
 'use strict';
 
-var Vue = require('vue');
+var Vue = require('vue'),
+    TweenMax = require('TweenMax');
 
 /**
  * UI contact module.
@@ -14,16 +15,29 @@ module.exports = Vue.extend({
 
   data: function () {
     return {
-      msg: 'Contact module!'
+      title: 'Contact module!'
     };
   },
 
   attached: function() {
 
-    console.log('contact');
+    TweenMax.set(this.$el, {opacity: 0, y: -50});
+
+    // test Tween
+    this.show();
   },
 
   methods: {
+
+    /**
+     * //
+     * @method show
+     **/
+    show: function() {
+
+      TweenMax.to(this.$el, 2, {opacity: 1});
+      TweenMax.to(this.$el, 1, {y: 0});
+    },
 
     /**
      *

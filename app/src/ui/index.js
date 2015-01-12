@@ -58,7 +58,7 @@ module.exports = new Vue({
      **/
     startPreloader: function() {
 
-      var manifest = this.$options.manifest;
+      //var manifest = this.$options.manifest;
 
     },
 

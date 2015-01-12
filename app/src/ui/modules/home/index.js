@@ -15,7 +15,8 @@ module.exports = Vue.extend({
 
   data: function () {
     return {
-      msg: 'Home module!'
+      hello: '\'Allo, \'Allo!',
+      items: ['HTML5 Boilerplate', 'Sass', 'Vue.js', '... &amp; more (@see package.json)']
     };
   },
 
@@ -24,7 +25,7 @@ module.exports = Vue.extend({
     TweenMax.set(this.$el, {opacity: 0});
 
     // test addClass
-    Vue.util.addClass(this.$el, 'c__home--yo');
+    Vue.util.addClass(this.$el, 'm__home--yo');
 
     // test Tween
     this.show();
@@ -38,7 +39,7 @@ module.exports = Vue.extend({
      **/
     show: function() {
 
-      TweenMax.to(this.$el, 2, {delay: 1, opacity: 1});
+      TweenMax.to(this.$el, 2, {opacity: 1});
     },
 
     /**
