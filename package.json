@@ -29,14 +29,12 @@
       "browserify-shim"
     ]
   },
-  "browserify-shim": {
-
-  },
+  "browserify-shim": {},
   "devDependencies": {
-    "6to5ify": "^3.1.1",
+    "6to5ify": "^3.1.2",
     "apache-server-configs": "^2.11.0",
-    "browser-sync": "^1.8.3",
-    "browserify": "^8.0.3",
+    "browser-sync": "^1.9.0",
+    "browserify": "^8.1.0",
     "browserify-shim": "^3.8.2",
     "concurrent-transform": "^1.0.0",
     "del": "^1.1.1",
@@ -67,7 +65,7 @@
     "jshint-stylish": "^1.0.0",
     "opn": "^1.0.1",
     "prova": "^2.1.1",
-    "psi": "^0.1.6",
+    "psi": "^1.0.2",
     "require-dir": "^0.1.0",
     "run-sequence": "^1.0.2",
     "stringify": "^3.0.0",
@@ -78,9 +76,7 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "scripts": {
-
-  },
+  "scripts": {},
   "dependencies": {
     "domready": "^1.0.7",
     "fastclick": "^1.0.3",
