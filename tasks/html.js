@@ -25,6 +25,8 @@ gulp.task('html', function () {
 
       ]
     })))
+
+
     // Concatenate And Minify Styles
     // In case you are still using useref build blocks
     .pipe($.if('*.css', $.csso()))
@@ -32,6 +34,7 @@ gulp.task('html', function () {
     .pipe($.useref())
     // Minify Any HTML
     .pipe($.if('*.html', $.minifyHtml({empty:true})))
+    .pipe($.frep({'@@version': version}))
     // Output Files
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'html'}));
