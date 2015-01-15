@@ -5,7 +5,7 @@
     <li v-repeat="items" v-html="$value" />
   </ul>
   <div class="navigation">
-    <button name="navigation" value="Contact" v-on="click: testNavigation">Contact</button>
+    <a href="/contact">Contact</a>
   </div>
 
 </div>

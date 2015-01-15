@@ -15,7 +15,7 @@ test('utils/I18n -- load locale file (when only "fr" available) ', function (t) 
   var lang = 'fr';
   var locales = ['fr'];
 
-  i18n.completed.addOnce(boot);
+  i18n.loaded.addOnce(boot);
   i18n.load({ directory: '../../../../app/locales/', lang: lang, locales: locales });
 
   function boot() {
@@ -36,7 +36,7 @@ test('utils/I18n -- package name', function (t) {
   var lang = 'fr';
   var locales = ['fr'];
 
-  i18n.completed.addOnce(boot);
+  i18n.loaded.addOnce(boot);
   i18n.load({ directory: '../../../../app/locales/', lang: lang, locales: locales });
 
   function boot() {

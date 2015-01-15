@@ -1,8 +1,8 @@
 .m__home {
 
   width: 500px;
-  margin: 50px auto 0 auto;
-  padding: 60px;
+  margin: 20px auto 0 auto;
+  padding: 30px 60px;
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
@@ -21,9 +21,12 @@
     text-align: center;
   }
 
-  button {
+  a {
+    display: inline-block;
+    padding: 10px 15px ;
     font-weight: bold;
-    color: #000001;
+    color: #FFFFFF;
+    background-color: #4C7083;
 
     &:hover {
       color: #999;

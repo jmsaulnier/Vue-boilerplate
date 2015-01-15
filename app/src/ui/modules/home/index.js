@@ -16,7 +16,11 @@ module.exports = Vue.extend({
   data: function () {
     return {
       hello: '\'Allo, \'Allo!',
-      items: ['HTML5 Boilerplate', 'Sass', 'Vue.js', '... &amp; more (@see package.json)']
+      items: [  'HTML5 Boilerplate',
+                'Sass',
+                'Vue.js',
+                '... &amp; more (@see package.json)'
+      ]
     };
   },
 
@@ -40,17 +44,6 @@ module.exports = Vue.extend({
     show: function() {
 
       TweenMax.to(this.$el, 2, {opacity: 1});
-    },
-
-    /**
-     * //
-     * @method testNavigation
-     **/
-    testNavigation: function() {
-
-      Vue.navigate('/contact');
     }
-
   }
-
 });
