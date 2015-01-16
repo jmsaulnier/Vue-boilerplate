@@ -10,7 +10,7 @@ var domready = require('domready'),
 
 domready(function () {
 
-  i18n.completed.addOnce(boot);
+  i18n.loaded.addOnce(boot);
   i18n.load({ lang: window.config.LANG, locales: window.config.LOCALES });
 
   /**

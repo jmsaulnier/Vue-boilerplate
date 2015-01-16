@@ -3,6 +3,17 @@ Vue-boilerplate
 
 A front-end template that helps you build fast, modern mobile web apps. (IE9+) @see [Web Starter Kit](https://github.com/google/web-starter-kit)
 
+
+##Installation
+ 
+1. [NodeJS](http://nodejs.org) - use the installer.
+2. [Gulp](https://github.com/gulpjs/gulp) - `$ npm install -g gulp` 
+
+## Getting Started
+
+- Install: `npm install`
+- Run: `gulp serve`
+
 ## Features
 
 * [Vue.js](http://vuejs.org/) / [Browserify](http://browserify.org/) ♡
@@ -14,10 +25,7 @@ A front-end template that helps you build fast, modern mobile web apps. (IE9+) @
 * Awesome Image Optimization (via OptiPNG, pngquant, jpegtran and gifsicle)
 * Unit Testing with [Prova](https://github.com/azer/prova)
 
-## Getting Started
 
-- Install: `npm install`
-- Run: `gulp serve`
 
 #### Third-Party Dependencies
 
@@ -27,6 +35,12 @@ Third-party dependencies are managed with **npm**
 
 ```sh
 $ npm install --save awesome-module
+```
+
+## Test
+
+```sh
+$ gulp test
 ```
 
 ## Build

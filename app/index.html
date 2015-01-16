@@ -53,7 +53,7 @@
     <!-- [/] SEO: -->
 
     <!-- Page styles -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.css?v=@@version">
   </head>
   <body>
     <div id="app">
@@ -69,6 +69,7 @@
 
       var config = {
         ENV           : 'prod',
+        VERSION       : '@@version',
         LOG           : 0,
         LANG          : 'en-us',
         LOCALES       : ['en', 'en-us', 'fr'],
@@ -85,6 +86,7 @@
 
       var config = {
         ENV           : 'dev',
+        VERSION       : '@@version',
         LOG           : 1,
         LANG          : 'en-us',
         LOCALES       : ['en', 'en-us', 'fr'],
@@ -96,7 +98,7 @@
     </script>
     <!-- endbuild -->
 
-    <!-- build:js scripts/bundle.js -->
+    <!-- build:js scripts/bundle.js?v=@@version -->
     <script src="build/bundle.js"></script>
     <!-- endbuild -->
 

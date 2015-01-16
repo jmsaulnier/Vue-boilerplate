@@ -14,7 +14,7 @@ module.exports = Vue.extend({
 
   data: function () {
     return {
-      title: 'Header!'
+      title: '♡'
     };
   },
 

@@ -6,7 +6,7 @@ var gulp = require('gulp'),
   reload = browserSync.reload;
 
 // Watch Files For Changes & Reload
-gulp.task('serve', ['watchify'], function () {
+gulp.task('serve', ['styles', 'watchify'], function () {
   browserSync({
     notify: false,
     // Customize the BrowserSync console logging prefix

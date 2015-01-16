@@ -1,10 +1,15 @@
 'use strict';
 
-var gulp = require('gulp');
+var gulp = require('gulp'),
+  runSequence = require('run-sequence');
 
-//
 
-gulp.task('test', function ( done ) {
+gulp.task('test', function (cb) {
+  runSequence('test-unit-spec', cb);
+});
+
+
+gulp.task('test-unit-spec', function ( done ) {
   // run process
   var child = require('child_process').spawn(
     './node_modules/.bin/prova',

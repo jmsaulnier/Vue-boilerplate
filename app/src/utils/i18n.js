@@ -33,7 +33,7 @@ module.exports = {
   /**
    * @readonly
    **/
-  completed: new Signal(),
+  loaded: new Signal(),
 
   /**
    * //
@@ -52,7 +52,7 @@ module.exports = {
         if(response.ok) {
 
           this.translations = response.text;
-          this.completed.dispatch();
+          this.loaded.dispatch();
 
         } else {
           console.warn('Unable to load i18n file :: ' + this.lang);

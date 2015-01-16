@@ -1,3 +1,3 @@
-<div class="c__header">
+<header class="c__header">
   <h2>{{title}}</h2>
-</div>
+</header>

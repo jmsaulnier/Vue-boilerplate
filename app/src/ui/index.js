@@ -2,8 +2,7 @@
 
 var Vue = require('vue'),
     route = require('vue-route'),
-    resizeMixin = require('vue-resize-mixin'),
-    createjs = require('CreateJS');
+    resizeMixin = require('vue-resize-mixin');
 
 
 /**
@@ -49,8 +48,7 @@ module.exports = new Vue({
   },
 
   data: {
-    progress: 0,
-    preloader: null
+    progress: 0
   },
 
   methods: {
@@ -60,14 +58,7 @@ module.exports = new Vue({
      **/
     startPreloader: function() {
 
-      var manifest = this.$options.manifest;
-
-      this.preloader = new createjs.LoadQueue();
-
-      this.preloader.on('error', this.loadErrorHandler);
-      this.preloader.on('progress', this.loadProgressHandler);
-      this.preloader.on('complete', this.loadCompleteHandler);
-      this.preloader.loadManifest(manifest);
+      //var manifest = this.$options.manifest;
 
     },
 
@@ -97,13 +88,6 @@ module.exports = new Vue({
 
       this.progress = 1;
 
-      if(this.preloader) {
-        this.preloader.setPaused(true);
-        this.preloader.off();
-        this.preloader.removeAll();
-        this.preloader.close();
-        this.preloader = null;
-      }
     },
 
     /**

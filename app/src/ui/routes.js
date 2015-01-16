@@ -14,7 +14,6 @@ module.exports = {
     componentId: 'mContact'
   },
   options: {
-    hashbang: true,
-    click: false
+    hashbang: true
   }
 };
