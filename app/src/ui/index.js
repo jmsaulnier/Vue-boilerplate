@@ -11,6 +11,7 @@ var Vue = require('vue'),
  */
 
 Vue.use(route);
+Vue.config.prefix = 'data-v-';
 
 module.exports = new Vue({
 
