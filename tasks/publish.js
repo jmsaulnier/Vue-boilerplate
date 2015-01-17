@@ -13,8 +13,8 @@ gulp.task('publish', function() {
     bucket: process.env.AWS_BUCKET
   };
 
-  if (fs.existsSync("../env.json")) {
-    options = require('../env.json');
+  if (fs.existsSync('env.json')) {
+    options = require('../env.json').aws;
   }
 
   if (!options || !options.key || !options.secret || !options.bucket) {
