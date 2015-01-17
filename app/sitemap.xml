@@ -7,13 +7,6 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-  <url>
-    <loc>http://default-environment-zemrbezppf.elasticbeanstalk.com/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>>http://default-environment-zemrbezppf.elasticbeanstalk.com/contact</loc>
-    <changefreq>daily</changefreq>
-  </url>
+  
 
 </urlset>
