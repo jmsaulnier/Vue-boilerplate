@@ -20,11 +20,11 @@ domready(function () {
   function boot() {
 
     window.config.LANG = i18n.lang;
-    window.config.TRANSLATIONS = i18n.translations;
+    window.config.TRANSLATIONS = JSON.parse(i18n.translations);
 
     console.log(window.config.LANG + ' -- ' +  window.config.TRANSLATIONS);
 
-    setHeadTranslations();
+    setMetaDescription();
 
     require('./ui/index');
     i18n = null;
@@ -32,9 +32,12 @@ domready(function () {
 
   /**
    * //
-   * @method setHeadTranslations
+   * @method setMetaDescription
    **/
-  function setHeadTranslations() {
+  function setMetaDescription() {
+
+    document.title = window.config.TRANSLATIONS.meta.title;
+    document.description = window.config.TRANSLATIONS.meta.description;
 
   }
 });
