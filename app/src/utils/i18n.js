@@ -125,6 +125,10 @@ function getLangUrlParams() {
  **/
 function getValidLang(lang, isUrlParams) {
 
+  if(lang == null) {
+    return opts.lang;
+  }
+
   var lr = lang.split('-', 2),
     parentLang = lr[0],
     l = '',
