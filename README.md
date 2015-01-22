@@ -14,6 +14,12 @@ A front-end template that helps you build fast, modern mobile web apps. (IE9+) @
 - Install: `npm install`
 - Run: `gulp serve`
 
+## ! Warning (directives / W3C)
+
+Added `Vue.config.prefix = 'data-v-';` (app/src/ui/index.js)
+
+Example: `data-v-on="click: testNavigation"`
+
 ## Features
 
 * [Vue.js](http://vuejs.org/) / [Browserify](http://browserify.org/) ♡
