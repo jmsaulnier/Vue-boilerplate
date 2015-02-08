@@ -125,7 +125,7 @@ function getLangUrlParams() {
  **/
 function getValidLang(lang, isUrlParams) {
 
-  if(lang == null) {
+  if(lang === null) {
     return opts.lang;
   }
 
