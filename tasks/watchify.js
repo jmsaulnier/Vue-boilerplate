@@ -8,14 +8,14 @@ var gulp = require('gulp'),
     browserify = require('browserify'),
     watchify = require('watchify'),
     stringify = require('stringify'),
-    to5ify = require("6to5ify");
+    babelify = require("babelify");
 
 gulp.task('watchify', function(){
 
   var bundler = watchify(
     browserify()
       .transform(stringify(['.hjs', '.html', '.tpl']))
-      .transform(to5ify)
+      .transform(babelify)
       .require(require.resolve('../app/src/main.js'), { entry: true }),
     {
       basedir: './app/src', // (roots __dirname)
