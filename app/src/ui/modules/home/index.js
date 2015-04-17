@@ -1,7 +1,7 @@
 'use strict';
 
-var Vue = require('vue'),
-    TweenMax = require('TweenMax');
+var Vue = require('vue');
+var TweenMax = require('TweenMax');
 
 /**
  * UI home module.

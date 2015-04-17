@@ -1,8 +1,8 @@
 'use strict';
 
-var Vue = require('vue'),
-    route = require('vue-route'),
-    resizeMixin = require('vue-resize-mixin');
+var Vue = require('vue');
+var route = require('vue-route');
+var resizeMixin = require('vue-resize-mixin');
 
 
 /**

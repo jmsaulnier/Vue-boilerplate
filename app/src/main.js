@@ -1,7 +1,7 @@
 'use strict';
 
-var domready = require('domready'),
-    i18n = require('./utils/i18n');
+var domready = require('domready');
+var i18n = require('./utils/i18n');
 
 /**
  * main module.

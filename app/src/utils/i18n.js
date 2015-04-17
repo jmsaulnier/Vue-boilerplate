@@ -1,12 +1,12 @@
 'use strict';
 
-var Signal = require('signals'),
-    request = require('superagent'),
-    xtend = require('xtend'),
-    queryString = require('query-string');
+var Signal = require('signals');
+var request = require('superagent');
+var xtend = require('xtend');
+var queryString = require('query-string');
 
-var opts = null,
-    defaults = {
+var opts = null;
+var defaults = {
       lang: 'en',
       locales: ['en'],
       directory: '/locales/',
@@ -47,7 +47,7 @@ module.exports = {
 
     request
       .get(opts.directory + this.lang + opts.ext)
-      .end(function(response){
+      .end(function(error, response){
 
         if(response.ok) {
 

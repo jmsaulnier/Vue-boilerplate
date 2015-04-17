@@ -15,6 +15,14 @@ gulp.task('compress', ['uglify'], function() {
 gulp.task('uglify', function() {
 
   return gulp.src('./dist/scripts/*.js')
-    .pipe($.uglify())
+    .pipe($.uglify( {
+      sequences: true,
+      dead_code: true,
+      conditionals: true,
+      booleans: true,
+      unused: true,
+      if_return: true,
+      join_vars: true
+    }))
     .pipe(gulp.dest('./dist/scripts'));
 });
