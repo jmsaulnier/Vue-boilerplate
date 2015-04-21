@@ -1,7 +1,7 @@
 'use strict';
 
-var gulp = require('gulp'),
-    del = require('del');
+var gulp  = require('gulp');
+var del   = require('del');
 
 // build documentation
 

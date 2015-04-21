@@ -1,9 +1,9 @@
 'use strict';
 
-var gulp = require('gulp'),
-    $ = require('gulp-load-plugins')(),
-    parallelize = require('concurrent-transform'),
-    fs = require('fs');
+var gulp        = require('gulp');
+var $           = require('gulp-load-plugins')();
+var parallelize = require('concurrent-transform');
+var fs          = require('fs');
 
 gulp.task('publish', function() {
 

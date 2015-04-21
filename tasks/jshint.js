@@ -1,8 +1,8 @@
 'use strict';
 
-var gulp = require('gulp'),
-    $ = require('gulp-load-plugins')(),
-    browserSync = require('browser-sync');
+var gulp        = require('gulp');
+var $           = require('gulp-load-plugins')();
+var browserSync = require('browser-sync');
 
 // Lint JavaScript
 gulp.task('jshint', function () {

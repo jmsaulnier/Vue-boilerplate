@@ -1,14 +1,14 @@
 'use strict';
 
-var gulp = require('gulp'),
-    $ = require('gulp-load-plugins')(),
-    source = require('vinyl-source-stream'),
-    browserSync = require('browser-sync'),
-    reload = browserSync.reload,
-    browserify = require('browserify'),
-    watchify = require('watchify'),
-    stringify = require('stringify'),
-    babelify = require("babelify");
+var gulp        = require('gulp');
+var $           = require('gulp-load-plugins')();
+var source      = require('vinyl-source-stream');
+var browserSync = require('browser-sync');
+var reload      = browserSync.reload;
+var browserify  = require('browserify');
+var watchify    = require('watchify');
+var stringify   = require('stringify');
+var babelify    = require("babelify");
 
 gulp.task('watchify', function(){
 

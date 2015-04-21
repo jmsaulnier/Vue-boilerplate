@@ -1,7 +1,7 @@
 'use strict';
 
-var gulp = require('gulp'),
-    pagespeed = require('psi');
+var gulp       = require('gulp');
+var pagespeed  = require('psi');
 
 
 // Run PageSpeed Insights
