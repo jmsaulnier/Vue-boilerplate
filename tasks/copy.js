@@ -1,7 +1,7 @@
 'use strict';
 
-var gulp = require('gulp'),
-    $ = require('gulp-load-plugins')();
+var gulp  = require('gulp');
+var $     = require('gulp-load-plugins')();
 
 // Copy All Files At The Root Level (src)
 gulp.task('copy', function () {

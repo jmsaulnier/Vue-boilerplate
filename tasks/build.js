@@ -1,8 +1,8 @@
 'use strict';
 
-var gulp = require('gulp'),
-    runSequence = require('run-sequence'),
-    del = require('del');
+var gulp        = require('gulp');
+var runSequence = require('run-sequence');
+var del         = require('del');
 
 // Build Production Files, the Default Task
 gulp.task('build', ['clean'], function (cb) {

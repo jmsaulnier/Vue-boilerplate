@@ -1,9 +1,9 @@
 'use strict';
 
-var gulp = require('gulp'),
-  $ = require('gulp-load-plugins')(),
-  browserSync = require('browser-sync'),
-  reload = browserSync.reload;
+var gulp        = require('gulp');
+var $           = require('gulp-load-plugins')();
+var browserSync = require('browser-sync');
+var reload      = browserSync.reload;
 
 // Watch Files For Changes & Reload
 gulp.task('serve', ['styles', 'watchify'], function () {
