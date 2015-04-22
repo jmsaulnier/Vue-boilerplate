@@ -1,4 +1,4 @@
-<div class="m__home">
+<div class="m-home">
   <h1>{{hello}}</h1>
   <p>You now have:</p>
   <ul>

@@ -1,8 +1,8 @@
 'use strict';
 
-var Signal = require('signals');
-var request = require('superagent');
-var xtend = require('xtend');
+var Signal      = require('signals');
+var request     = require('superagent');
+var xtend       = require('xtend');
 var queryString = require('query-string');
 
 var opts = null;

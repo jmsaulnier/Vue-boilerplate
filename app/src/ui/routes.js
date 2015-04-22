@@ -7,11 +7,11 @@
 
 module.exports = {
   '/': {
-    componentId: 'mHome',
+    componentId: 'm-home',
     isDefault: true
   },
   '/contact': {
-    componentId: 'mContact'
+    componentId: 'm-contact'
   },
   options: {
     hashbang: true

@@ -6,7 +6,7 @@ A front-end template that helps you build fast, modern mobile web apps. (IE9+) @
 
 ##Installation
  
-1. [NodeJS](http://nodejs.org) - use the installer.
+1. [NodeJS](http://nodejs.org) - use the installer (> v0.12.2).
 2. [Gulp](https://github.com/gulpjs/gulp) - `$ npm install -g gulp` 
 
 ## Getting Started
