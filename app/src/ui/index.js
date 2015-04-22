@@ -1,9 +1,10 @@
 'use strict';
 
-var Vue = require('vue');
-var route = require('vue-route');
+var Vue         = require('vue');
+var route       = require('vue-route');
 var resizeMixin = require('vue-resize-mixin');
 
+var debug = require('debug');
 
 /**
  * UI index module.
@@ -12,6 +13,20 @@ var resizeMixin = require('vue-resize-mixin');
 
 Vue.use(route);
 Vue.config.prefix = 'data-v-';
+
+if (window.config.ENV === 'production') {
+  // Disable all debug logs in production.
+  debug.disable();
+  Vue.config.silent = true;
+} else {
+  // Enable debug log via query string.
+  // Example: ?debug=url,route
+  //
+  // Here `route` is enabled by default.
+  require('enable-debug')(['route'], true);
+
+  Vue.config.debug = true;
+}
 
 module.exports = new Vue({
 
@@ -26,10 +41,10 @@ module.exports = new Vue({
   routes: require('./routes'),
 
   components: {
-    mHome: require('./modules/home'),
-    mContact: require('./modules/contact'),
+    'm-home' : require('./modules/home'),
+    'm-contact': require('./modules/contact'),
 
-    cHeader: require('./components/header')
+    'c-header': require('./components/header')
   },
 
   manifest: [

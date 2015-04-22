@@ -1,7 +1,7 @@
 'use strict';
 
-var Vue = require('vue');
-var TweenMax = require('TweenMax');
+var Vue       = require('vue');
+var TweenMax  = require('TweenMax');
 
 /**
  * UI home module.
@@ -29,7 +29,7 @@ module.exports = Vue.extend({
     TweenMax.set(this.$el, {opacity: 0});
 
     // test addClass
-    Vue.util.addClass(this.$el, 'm__home--yo');
+    Vue.util.addClass(this.$el, 'm-home--yo');
 
     // test Tween
     this.show();
