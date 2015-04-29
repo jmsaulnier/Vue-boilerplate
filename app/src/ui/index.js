@@ -41,10 +41,10 @@ module.exports = new Vue({
   routes: require('./routes'),
 
   components: {
-    'm-home' : require('./modules/home'),
-    'm-contact': require('./modules/contact'),
+    'section-home' : require('./sections/home'),
+    'section-contact': require('./sections/contact'),
 
-    'c-header': require('./components/header')
+    'component-header': require('./components/header')
   },
 
   manifest: [

@@ -1,14 +1,13 @@
-.m-home {
+.section-contact {
 
-  width: 500px;
-  margin: 20px auto 0 auto;
-  padding: 30px 60px;
+  width: 350px;
+  margin: 50px auto 0 auto;
+  padding: 60px;
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
   color: #FFFFFF;
   background-color: #2E354D;
-  border-radius: 6px;
 
   h1 {
     font-size: 60px;
@@ -21,19 +20,13 @@
     text-align: center;
   }
 
-  a {
-    display: inline-block;
-    padding: 10px 15px ;
+  button {
     font-weight: bold;
-    color: #FFFFFF;
-    background-color: #4C7083;
+    color: #000001;
 
     &:hover {
       color: #999;
     }
   }
-}
-
-.m__home--yo {
 
 }

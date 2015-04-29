@@ -1,6 +1,6 @@
-<div class="m-contact">
+<section class="section-contact">
   <h2>{{title}}</h2>
-  <div class="navigation">
+  <aside class="navigation">
     <button name="navigation" value="Contact" data-v-on="click: testNavigation">< Back</button>
-  </div>
-</div>
+  </aside>
+</section>
