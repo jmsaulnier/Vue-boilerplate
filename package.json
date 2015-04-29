@@ -88,6 +88,7 @@
     "gsap": "^1.16.1",
     "inherits": "^2.0.1",
     "query-string": "^1.0.0",
+    "resource-loader": "^1.5.2",
     "signals": "^1.0.0",
     "superagent": "^1.2.0",
     "ua-device-type": "0.0.3",

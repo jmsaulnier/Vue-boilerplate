@@ -1,10 +1,18 @@
 'use strict';
 
+/* PACKAGE */
+
 var Vue         = require('vue');
 var route       = require('vue-route');
 var resizeMixin = require('vue-resize-mixin');
+var loaderMixin = require('./mixins/loader');
 
 var debug = require('debug');
+
+/* PRIVATE */
+
+var _preloader = null;
+var _manifest = [];
 
 /**
  * UI index module.
@@ -32,59 +40,53 @@ module.exports = new Vue({
 
   el: '#app',
 
-  mixins: [resizeMixin],
+  mixins: [resizeMixin, loaderMixin],
 
   events: {
-    'resize': 'resizeHandler'
+    'resize'        : 'resizeHandler',
+
+    'load:progress' : 'loadProgressHandler',
+    'load:complete' : 'loadCompleteHandler',
+    'load:error'    : 'loadErrorHandler'
   },
 
   routes: require('./routes'),
 
   components: {
-    'section-home' : require('./sections/home'),
-    'section-contact': require('./sections/contact'),
+    'section-home'    : require('./sections/home'),
+    'section-contact' : require('./sections/contact'),
 
     'component-header': require('./components/header')
   },
 
-  manifest: [
-    { id: 'logo', src: 'images/logo.png' }
-  ],
-
   created: function() {
+
+    _preloader = document.getElementById('preloader');
+
     // If you need to dynamically create the manifest
-    this.$options.manifest = [
-      // ...
+    _manifest = [
+      'images/yeoman.png'
     ];
   },
 
   ready: function() {
 
-    this.startPreloader();
+    this.load(_manifest);
   },
 
   data: {
+    isLoaded: false,
     progress: 0
   },
 
   methods: {
 
     /**
-     * @method startPreloader
-     **/
-    startPreloader: function() {
-
-      //var manifest = this.$options.manifest;
-
-    },
-
-    /**
      * @method loadErrorHandler
      * @param {Object} event
      **/
     loadErrorHandler: function(event) {
-
-
+        console.log('Error loading assets');
     },
 
     /**
@@ -93,7 +95,7 @@ module.exports = new Vue({
      **/
     loadProgressHandler: function(event) {
 
-      this.progress = event.progress;
+      this.$data.progress = event.progress;
     },
 
     /**
@@ -102,8 +104,10 @@ module.exports = new Vue({
      **/
     loadCompleteHandler: function(event) {
 
-      this.progress = 1;
+      this.$data.progress = 1;
+      this.$data.isLoaded = true;
 
+      _preloader.remove();
     },
 
     /**
@@ -114,8 +118,6 @@ module.exports = new Vue({
 
       var width = event.width;
       var height = event.height;
-
-      console.log('width' + width + 'height ' + height);
     }
   }
 

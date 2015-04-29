@@ -22,7 +22,9 @@ domready(function () {
     window.config.LANG = i18n.lang;
     window.config.TRANSLATIONS = JSON.parse(i18n.translations);
 
-    console.log(window.config.LANG + ' -- ' +  window.config.TRANSLATIONS);
+    if(window.config.ENV === 'dev') {
+      console.log(window.config.LANG + ' -- ' +  window.config.TRANSLATIONS);
+    }
 
     setMetaDescription();
 

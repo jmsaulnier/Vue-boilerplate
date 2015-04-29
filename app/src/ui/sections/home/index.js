@@ -1,5 +1,7 @@
 'use strict';
 
+/* PACKAGE */
+
 var Vue       = require('vue');
 var TweenMax  = require('TweenMax');
 
@@ -15,11 +17,11 @@ module.exports = Vue.extend({
 
   data: function () {
     return {
-      hello: '\'Allo, \'Allo!',
+      hello: '\'Allo!',
       items: [  'HTML5 Boilerplate',
                 'Sass',
                 'Vue.js',
-                '... &amp; more (@see package.json)'
+                '... &amp; more'
       ]
     };
   },
