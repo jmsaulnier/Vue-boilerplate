@@ -1,11 +1,13 @@
 'use strict';
 
+/* PACKAGE */
+
 var Vue       = require('vue');
 var TweenMax  = require('TweenMax');
 
 /**
- * UI home module.
- * @module ui/modules/home/index
+ * UI contact section.
+ * @module ui/sections/contact/index
  */
 
 module.exports = Vue.extend({
@@ -15,21 +17,13 @@ module.exports = Vue.extend({
 
   data: function () {
     return {
-      hello: '\'Allo, \'Allo!',
-      items: [  'HTML5 Boilerplate',
-                'Sass',
-                'Vue.js',
-                '... &amp; more (@see package.json)'
-      ]
+      title: 'Contact section!'
     };
   },
 
   attached: function() {
 
-    TweenMax.set(this.$el, {opacity: 0});
-
-    // test addClass
-    Vue.util.addClass(this.$el, 'm-home--yo');
+    TweenMax.set(this.$el, {opacity: 0, y: -50});
 
     // test Tween
     this.show();
@@ -44,6 +38,20 @@ module.exports = Vue.extend({
     show: function() {
 
       TweenMax.to(this.$el, 2, {opacity: 1});
+      TweenMax.to(this.$el, 1, {y: 0});
+    },
+
+    /**
+     *
+     * //
+     *
+     * @method testNavigation
+     **/
+    testNavigation: function() {
+
+      Vue.navigate('/');
     }
+
   }
+
 });

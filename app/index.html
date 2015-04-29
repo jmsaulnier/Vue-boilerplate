@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- facebook  -->
@@ -20,7 +20,7 @@
     <meta name="twitter:description" content="">
     <meta name="twitter:image:src" content="">
 
-    <title></title>
+    <title>Web Starter Kit</title>
 
     <!-- Add to homescreen -->
     <link rel="manifest" href="manifest.json">
@@ -56,13 +56,18 @@
     <link rel="stylesheet" href="styles/main.css?v=@@version">
   </head>
   <body>
-    <div id="app">
 
-      <div data-v-component="c-header"></div>
+    <section id="preloader">Loading...</section>
 
-      <div data-v-route></div>
+    <section id="app">
 
-    </div>
+      <section data-v-if="isLoaded">
+        <div data-v-component="component-header"></div>
+
+        <div data-v-route></div>
+      </section>
+
+    </section>
 
     <!-- CONFIG:: PROD-->
     <script type="text/javascript">
@@ -71,9 +76,6 @@
         ENV           : 'production',
         VERSION       : '@@version',
         LOG           : 0,
-        LANG          : 'en-us',
-        LOCALES       : ['en', 'en-us', 'fr'],
-        TRANSLATIONS  : null,
         UA            : 'UA-XXXXXX',
         FB_ID         : 'xxx'
       };
@@ -88,9 +90,6 @@
         ENV           : 'development',
         VERSION       : '@@version',
         LOG           : 1,
-        LANG          : 'en-us',
-        LOCALES       : ['en', 'en-us', 'fr'],
-        TRANSLATIONS  : null,
         UA            : 'UA-XXXXXX',
         FB_ID         : 'xxx'
       };

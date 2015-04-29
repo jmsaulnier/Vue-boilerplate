@@ -1,6 +1,6 @@
-.m-contact {
+.section-contact {
 
-  width: 350px;
+  width: 60%;
   margin: 50px auto 0 auto;
   padding: 60px;
   font-size: 18px;
@@ -9,14 +9,14 @@
   color: #FFFFFF;
   background-color: #2E354D;
 
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+  @media (max-width: 50em) {
+    width: 100%;
+    padding: 1em 1em 2em 1em;
+    line-height: 2em;
   }
 
   .navigation {
-    padding: 20px 0 0 0;
+    padding: 2em 0 0 0;
     text-align: center;
   }
 

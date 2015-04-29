@@ -22,7 +22,7 @@ gulp.task('styles', function () {
   return gulp.src([
     'app/styles/*.scss',
     'app/styles/**/*.css',
-    'app/src/ui/modules/**/*.scss',
+    'app/src/ui/sections/**/*.scss',
     'app/src/ui/components/**/*.scss'
   ])
     .pipe($.changed('styles', {extension: '.scss'}))

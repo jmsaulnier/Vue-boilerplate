@@ -1,5 +1,7 @@
 'use strict';
 
+/* PACKAGE */
+
 var Vue = require('vue');
 
 /**
