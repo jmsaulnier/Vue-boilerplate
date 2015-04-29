@@ -116,8 +116,8 @@ module.exports = new Vue({
      **/
     resizeHandler: function(event) {
 
-      var width = event.width;
-      var height = event.height;
+      //var width = event.width;
+      //var height = event.height;
     }
   }
 
