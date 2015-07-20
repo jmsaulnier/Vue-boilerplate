@@ -9,10 +9,9 @@ var Vue = require('vue');
  * @module ui/components/header/index
  */
 
-module.exports = Vue.extend({
+var Header = Vue.extend({
 
   template: require('./view.tpl'),
-  replace: true,
 
   data: function () {
     return {
@@ -31,3 +30,7 @@ module.exports = Vue.extend({
   }
 
 });
+
+Vue.component('component-header', Header);
+
+module.exports = Header;

@@ -61,10 +61,10 @@
 
     <section id="app">
 
-      <section data-v-if="isLoaded">
-        <div data-v-component="component-header"></div>
+      <section v-if="isLoaded">
+        <component-header></component-header>
 
-        <div data-v-route></div>
+        <div v-route></div>
       </section>
 
     </section>
