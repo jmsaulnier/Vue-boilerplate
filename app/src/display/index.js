@@ -20,7 +20,6 @@ var _manifest = [];
  */
 
 Vue.use(route);
-Vue.config.prefix = 'data-v-';
 
 if (window.config.ENV === 'production') {
   // Disable all debug logs in production.

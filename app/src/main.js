@@ -1,7 +1,6 @@
 'use strict';
 
 var domready = require('domready');
-var i18n     = require('./utils/i18n');
 
 /**
  * main module.
@@ -10,8 +9,7 @@ var i18n     = require('./utils/i18n');
 
 domready(function () {
 
-  require('./ui/index');
-  i18n = null;
+  require('./display/index');
 
 });
 

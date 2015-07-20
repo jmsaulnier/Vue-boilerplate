@@ -6,24 +6,30 @@ var Vue       = require('vue');
 var TweenMax  = require('TweenMax');
 
 /**
- * UI contact section.
- * @module ui/sections/contact/index
+ * UI home section.
+ * @module ui/sections/home/index
  */
 
-module.exports = Vue.extend({
+var SectionHome = Vue.extend({
+
+  name: 'section-home',
 
   template: require('./view.tpl'),
-  replace: true,
 
   data: function () {
     return {
-      title: 'Contact section!'
+      hello: '\'Allo!',
+      items: [  'HTML5 Boilerplate',
+                'Sass',
+                'Vue.js',
+                '... &amp; more'
+      ]
     };
   },
 
   attached: function() {
 
-    TweenMax.set(this.$el, {opacity: 0, y: -50});
+    TweenMax.set(this.$el, {opacity: 0});
 
     // test Tween
     this.show();
@@ -38,20 +44,8 @@ module.exports = Vue.extend({
     show: function() {
 
       TweenMax.to(this.$el, 2, {opacity: 1});
-      TweenMax.to(this.$el, 1, {y: 0});
-    },
-
-    /**
-     *
-     * //
-     *
-     * @method testNavigation
-     **/
-    testNavigation: function() {
-
-      Vue.navigate('/');
     }
-
   }
-
 });
+
+module.exports = SectionHome;
