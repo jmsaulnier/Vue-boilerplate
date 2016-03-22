@@ -1,6 +1,8 @@
 Vue-boilerplate
 ===============
 
+[DEPRECATED] Please use https://github.com/vuejs-templates/webpack
+
 A front-end template that helps you build fast, modern mobile web apps. (IE9+) @see [Web Starter Kit](https://github.com/google/web-starter-kit)
 
 
